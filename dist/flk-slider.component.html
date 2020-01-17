@@ -1,0 +1,30 @@
+<section class="flk-slider">
+    <div 
+         class="slides-wrapper" 
+         [style]="{height: this.option('height')}" 
+         [class]="{'fixed-height': this.option('height') != 'auto', centered: this.option('centered')}" 
+         *as="slidesWrapperElement">
+        <div 
+            *for="let slide, index of this.slidesList" 
+            *as="sliderElements" 
+            [class]="{active: this.currentSlideIndex == index}" 
+            class="slide"
+            (mouseover)="this.option('pauseOnHover') && this.pause()"
+            (mouseout)="this.option('pauseOnHover') && this.resume()"
+        >
+            <img *if="slide.image" [src]="slide.image" [alt]="slide.alt || slide.caption" />
+        </div>        
+        <section *if="this.option('navigation')" class="navigation">
+            <button type="button" class="nav prev" (click)="this.prev()">
+                <fa [icon]="this.option('navigationIcons.prev')"></fa>
+            </button>
+            <button type="button" class="nav next" (click)="this.next()">
+                <fa [icon]="this.option('navigationIcons.next')"></fa>
+            </button>
+        </section>
+        <section *if="this.option('bullets')" class="bullets">
+            <span *for="let slide, index of this.slidesList" (click)="this.current(index)" class="bullet" [class]="{active: this.currentSlideIndex == index}">
+            </span>
+        </section>
+    </div>
+</section>
