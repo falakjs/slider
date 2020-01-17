@@ -41,7 +41,7 @@ It can also be passed to the component directly.
 |---|---|---|---|
 | `loop`  | **true**  | **true** / **false**  |  Display slides infinity. |
 | `autoPlay`  | **true**  | **true** / **false**  |  Will auto play next slide after x amount of `delay` option. |
-| `delay`  | **5000**  | Number  | Wait for time before playing next slide, works only when `autoPlay` enabled  |
+| `delay`  | **5000**  | Number  | Wait for time before playing next slide, works only when `autoPlay` enabled, `Value in milliseconds`.  |
 | `pauseOnHover`  | **true**  | **true** / **false**  |  Pause auto play when hovering on the slider. |
 | `animation`  | **fade**  | **fade**  |  Sliding animation. |
 | `centered`  | **true**  | **true** / **false**  |  If set to true, slides will be centered in the slider block. |
